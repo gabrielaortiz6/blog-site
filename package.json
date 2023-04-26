@@ -1,0 +1,20 @@
+{
+  "name": "blog-site",
+  "version": "1.0.0",
+  "description": "CMS-style blog site for developers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielaortiz6/blog-site.git"
+  },
+  "author": "gabriela ortiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielaortiz6/blog-site/issues"
+  },
+  "homepage": "https://github.com/gabrielaortiz6/blog-site#readme"
+}
