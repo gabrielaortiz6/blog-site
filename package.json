@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/gabrielaortiz6/blog-site/issues"
   },
-  "homepage": "https://github.com/gabrielaortiz6/blog-site#readme"
+  "homepage": "https://github.com/gabrielaortiz6/blog-site#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.6",
+    "dotenv": "^16.0.3",
+    "express-handlebars": "^7.0.7",
+    "express-session": "^1.17.3",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.2.4",
+    "sequelize": "^6.31.0"
+  }
 }
