@@ -25,10 +25,10 @@ BlogPost.init(
               key: 'id',
             },
           },
-          date: {
-            type: DataTypes.DATE,
-            allowNull: false,
-          },
+        //   date: {
+        //     type: DataTypes.DATE,
+        //     allowNull: false,
+        //   },
         },
     {
         sequelize,
