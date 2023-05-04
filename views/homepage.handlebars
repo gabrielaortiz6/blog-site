@@ -1,20 +1,21 @@
 <!-- Loop over each object in the projects array -->
 
-{{!-- {{#each blog_posts as |blog_post| }} --}}
+{{#each blogposts as |blogpost| }}
 <html>
-<h1>This is the log in page</h1>
+<h1>This is the homepage</h1>
 
 </html>
-{{!-- <div class="row mb-4 project">
+<div class="row mb-4 project">
 
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       {{{get_emoji}}}
-      <a href="/project/{{blog_post.id}}">{{blog_post.name}}</a>
+      <a href="/project/{{blogpost.id}}">{{blogpost.name}}</a>
     </h2>
   </div>
   <div class="col-md-7">
   </div>
 </div>
-{{/each}} --}}
+{{/each}}
+</html>
