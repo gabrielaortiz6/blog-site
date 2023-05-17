@@ -1,5 +1,5 @@
-// const router = require('express').Router();
-// const { BlogPost } = require('../../models');
+const router = require('express').Router();
+const { BlogPost } = require('../../models');
 
 // router.post('/', async (req, res) => {
 //   try {
@@ -34,4 +34,25 @@
 //   }
 // });
 
-// module.exports = router;
+// Add a new POST route to handle form submissions
+//add authentication
+router.post('/', async (req, res) => {
+    console.log('we hit it');
+    try {
+      // Create a new Plant record in the database using the form data
+      const blogpost = await BlogPost.create({
+        title: req.body.title,
+        content: req.body.content,
+        user_id: req.session.user_id
+      });
+      // Send a success response to the client
+      res.status(201).json({ success: true, blogpost: blogpost });
+      console.log('success');
+    } catch (err) {
+      // Handle errors and send an error response to the client
+      console.error(err);
+      res.status(500).json({ message: 'Server error occurred while creating plant record' });
+    }
+  });
+
+module.exports = router;

@@ -4,34 +4,30 @@
   "description": "CMS-style blog site for developers",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "lint": "npx eslint **/*.js --quiet"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gabrielaortiz6/blog-site.git"
-  },
-  "author": "gabriela ortiz",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gabrielaortiz6/blog-site/issues"
-  },
-  "homepage": "https://github.com/gabrielaortiz6/blog-site#readme",
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.1.6",
-    "dotenv": "^16.0.3",
+    "dayjs": "^1.11.7",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "express-handlebars": "^7.0.7",
+    "express-handlebars": "^5.2.0",
     "express-session": "^1.17.3",
-    "handlebars": "^4.7.6",
-    "inquirer": "^8.2.4",
-    "mysql2": "^3.2.4",
-    "node-fetch": "^3.3.1",
-    "sequelize": "^6.31.0"
+    "lint": "^0.8.19",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.3.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^6.15.0",
+    "prettier": "^2.1.2"
   }
 }
