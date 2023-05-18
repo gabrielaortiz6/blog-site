@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost, User } = require('../models');
+const { BlogPost, User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 const bcrypt = require('bcrypt');
 
@@ -45,16 +45,17 @@ router.get('/blogpost/:id', withAuth, async (req, res) => {
   try {
     const blogPostData = await BlogPost.findByPk(req.params.id, {
       include: [
+        User,
         {
-          model: User,
-          attributes: ['username'],
+          model: Comment,
+          include: [User],
         },
       ],
     });
 
     const blogpost = blogPostData.get({ plain: true });
 
-    res.render('homepage', {
+    res.render('blogpost', {
       ...blogpost,
       logged_in: req.session.logged_in
     });
