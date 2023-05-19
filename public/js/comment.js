@@ -1,5 +1,4 @@
 const newFormHandler = async (event) => {
-  console.log('newFormHandler executed');
   event.preventDefault();
 
   const comment = document.querySelector('#comment').value.trim();
@@ -14,16 +13,12 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // const data = await response.json(); // Extract JSON data from the response
 
-      // Display form data
-      // document.getElementById('display-comment').textContent = data.comment.comment_text;
-      // document.getElementById('display-email').textContent = email;
+      // Extract the JSON data from the response
+      const data = await response.json();
 
-      const data = await response.json(); // Extract the JSON data from the response
-
-  // Display the comment
-  document.getElementById('display-comment').textContent = data.comment.comment_text;
+      // Display the comment
+      document.getElementById('display-comment').textContent = data.comment.comment_text;
 
       // Hide form and display the submitted data
       document.getElementById('comment-container').style.display = 'none';
@@ -34,6 +29,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+//event trigger
 document
   .querySelector('.btn-primary')
   .addEventListener('click', newFormHandler);

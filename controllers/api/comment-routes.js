@@ -4,7 +4,6 @@ const withAuth = require('../../utils/auth');
 
 // create comment
 router.post('/', withAuth, async (req, res) => {
-  console.log('comment route triggered');
   try {
     const comment = await Comment.create({
     comment_text: req.body.comment_text,
@@ -22,15 +21,6 @@ router.post('/', withAuth, async (req, res) => {
     };
 });
 
-// // find all comments
-// router.get('/', withAuth, async (req, res) => {
-//   try { 
-//     const commentData = await Comment.findAll()
-//     .then(dbCommentData => res.json(dbCommentData))
-//   } catch (err) {
-//       console.log(err);
-//       res.status(500).json(err);
-//     }
-// });
+//add get all route ?
 
 module.exports = router;

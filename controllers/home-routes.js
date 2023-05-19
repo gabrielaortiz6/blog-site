@@ -28,18 +28,38 @@ router.get('/', async (req, res) => {
   }
 });
 
+// router.get('/dashboard', withAuth, async (req, res) => {
+//   try {
+//     res.render('dashboard', {
+//       logged_in: req.session.logged_in,
+//       username: req.session.username
+//     });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send('Server Error');
+//   }
+// });
+
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
+    const userId = req.session.user_id;
+
+    // Fetch blog posts created by the logged-in user
+    const blogPosts = await BlogPost.findAll({
+      where: { user_id: userId },
+      include: [User],
+    });
+
     res.render('dashboard', {
       logged_in: req.session.logged_in,
-      username: req.session.username
+      username: req.session.username,
+      blogPosts: blogPosts.map((blogPost) => blogPost.get({ plain: true })),
     });
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
   }
 });
-
 
 router.get('/blogpost/:id', withAuth, async (req, res) => {
   try {

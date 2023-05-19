@@ -1,31 +1,11 @@
 const router = require('express').Router();
 const { BlogPost } = require('../../models');
 
-// router.delete('/:id', async (req, res) => {
-//   try {
-//     const blogPostData = await BlogPost.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
-
-//     if (!blogPostData) {
-//       res.status(404).json({ message: 'No blogpost found with this id!' });
-//       return;
-//     }
-
-//     res.status(200).json(blogPostData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 // Add a new POST route to handle form submissions
 //add authentication
 router.post('/', async (req, res) => {
-    console.log('we hit it');
-    try {
+  console.log('we hit it');
+  try {
       // Create a new Plant record in the database using the form data
       const blogpost = await BlogPost.create({
         title: req.body.title,
@@ -41,5 +21,26 @@ router.post('/', async (req, res) => {
       res.status(500).json({ message: 'Server error occurred while creating plant record' });
     }
   });
-
-module.exports = router;
+  
+  // router.delete('/:id', async (req, res) => {
+  //   try {
+  //     const blogPostData = await BlogPost.destroy({
+  //       where: {
+  //         id: req.params.id,
+  //         user_id: req.session.user_id,
+  //       },
+  //     });
+  
+  //     if (!blogPostData) {
+  //       res.status(404).json({ message: 'No blogpost found with this id!' });
+  //       return;
+  //     }
+  
+  //     res.status(200).json(blogPostData);
+  //   } catch (err) {
+  //     res.status(500).json(err);
+  //   }
+  // });
+  
+  module.exports = router;
+  

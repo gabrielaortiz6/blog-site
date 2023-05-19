@@ -23,4 +23,17 @@
     </form>
   </div>
 
+<div class="old-blogposts row mt-4">
+  <div class="col-md-6">
+    <h3>Previous Posts:</h3>
+  {{#each blogPosts}}
+  <div class="blog-post">
+    <h5>{{title}}</h5>
+    <p>Created by: {{user.username}}</p>
+    <p>{{content}}</p>
+  </div>
+{{/each}}
+</div>
+</div>
+
 <script src="/js/dashboard.js"></script>
