@@ -31,9 +31,9 @@
     <h5 class="title">{{title}}</h5>
     <p>Created by: {{user.username}}</p>
     <p class="content"> {{content}}</p>
-    <button class="btn btn-primary" id="edit-btn" onclick="editBlogPost('{{id}}')">Edit</button>
+    <button class="btn btn-primary" id="edit-btn-{{id}}" onclick="editBlogPost('{{id}}')">Edit</button>
     <button class="btn btn-danger" id="delete-btn" onclick="deleteBlogPost('{{id}}')">Delete</button>
- <button class="btn" id="save-btn" onclick="saveBlogPost({{id}})">Save</button>
+ <button class="btn" id="save-btn-{{id}}" onclick="saveBlogPost({{id}})" style="display: none;">Save</button>
  </div>
     {{/each}}
   </div>

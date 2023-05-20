@@ -67,12 +67,12 @@ const editBlogPost = (blogPostId) => {
   blogPostContainer.querySelector('.content').innerHTML = '';
   blogPostContainer.querySelector('.content').appendChild(contentInput);
 
-  // Toggle the display of the Save button
-  const saveButton = blogPostContainer.querySelector('.save-btn');
-  saveButton.style.display = saveButton.style.display === 'none' ? 'inline-block' : 'none';
-  
-  // Replace the edit button with the save button
-  blogPostContainer.querySelector('.edit-btn').replaceWith(saveButton);
+  const editButton = blogPostContainer.querySelector(`#edit-btn-${blogPostId}`);
+  const saveButton = blogPostContainer.querySelector(`#save-btn-${blogPostId}`);
+
+  editButton.style.display = 'none';
+  saveButton.style.display = 'inline-block';
+
   saveButton.addEventListener('click', () => saveBlogPost(blogPostId));
 };
 
@@ -99,9 +99,12 @@ const saveBlogPost = async (blogPostId) => {
         blogPostContainer.querySelector('.title').innerHTML = title;
         blogPostContainer.querySelector('.content').innerHTML = content;
 
-         // Toggle the display of the Save button
-         const saveButton = blogPostContainer.querySelector('.save-button');
-         saveButton.style.display = saveButton.style.display === 'none' ? 'inline-block' : 'none';
+        const editButton = blogPostContainer.querySelector(`#edit-btn-${blogPostId}`);
+        const saveButton = blogPostContainer.querySelector(`#save-btn-${blogPostId}`);
+
+        editButton.style.display = 'inline-block';
+        saveButton.style.display = 'none';
+
       } else {
         alert('Failed to save blog post');
       }
