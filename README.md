@@ -22,17 +22,17 @@ To install the required dependencies, run the following command:
 
 The following are screenshots demonstrating the general layout and functionality of the site:
 
-!(Homepage)[public/images/homepage screenshot.png]
-!(Login Page)[public/images/login screenshot.png]
-!(Dashboard)[public/images/dashboard screenshot.png]
-!(Comment page)[public/images/comment screenshot.png]
+* ![Homepage](public/images/homepage_screenshot.png)
+* ![Login Page](public/images/login_screenshot.png)
+* ![Dashboard](public/images/dashboard_screenshot.png)
+* ![Comment page](public/images/comment_screenshot.png)
 
 ## Deployed Site Link
 
 
 ## Questions
 
-Feel free to contact me on my (GitHub)[https://github.com/gabrielaortiz6/blog-site] if you have any questions or concerns.
+Feel free to contact me on my [GitHub](https://github.com/gabrielaortiz6/blog-site) if you have any questions or concerns.
 
 
 ---
