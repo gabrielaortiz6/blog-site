@@ -26,7 +26,7 @@ const deleteBlogPost = async (blogPostId) => {
     const response = await fetch(`/api/blogpost/${blogPostId}`, {
       method: 'DELETE',
     });
-    
+
     if (response.ok) {
       // Delete was successful, perform any necessary UI updates or redirects
       console.log('Blog post deleted successfully');
