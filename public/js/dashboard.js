@@ -67,14 +67,13 @@ const editBlogPost = (blogPostId) => {
   blogPostContainer.querySelector('.content').innerHTML = '';
   blogPostContainer.querySelector('.content').appendChild(contentInput);
 
-  // Create a save button
-  const saveButton = document.createElement('button');
-  saveButton.classList.add('btn', 'btn-primary');
-  saveButton.textContent = 'Save';
-  saveButton.addEventListener('click', () => saveBlogPost(blogPostId));
+  // Toggle the display of the Save button
+  const saveButton = blogPostContainer.querySelector('.save-btn');
+  saveButton.style.display = saveButton.style.display === 'none' ? 'inline-block' : 'none';
   
   // Replace the edit button with the save button
-  blogPostContainer.querySelector('.edit-button').replaceWith(saveButton);
+  blogPostContainer.querySelector('.edit-btn').replaceWith(saveButton);
+  saveButton.addEventListener('click', () => saveBlogPost(blogPostId));
 };
 
 const saveBlogPost = async (blogPostId) => {
@@ -100,14 +99,9 @@ const saveBlogPost = async (blogPostId) => {
         blogPostContainer.querySelector('.title').innerHTML = title;
         blogPostContainer.querySelector('.content').innerHTML = content;
 
-        // Create a new edit button
-        const editButton = document.createElement('button');
-        editButton.classList.add('btn', 'btn-primary', 'edit-button');
-        editButton.textContent = 'Edit';
-        editButton.addEventListener('click', () => editBlogPost(blogPostId));
-
-        // Replace the save button with the edit button
-        blogPostContainer.querySelector('.save-button').replaceWith(editButton);
+         // Toggle the display of the Save button
+         const saveButton = blogPostContainer.querySelector('.save-button');
+         saveButton.style.display = saveButton.style.display === 'none' ? 'inline-block' : 'none';
       } else {
         alert('Failed to save blog post');
       }
