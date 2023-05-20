@@ -31,10 +31,10 @@
     <h5>{{title}}</h5>
     <p>Created by: {{user.username}}</p>
     <p>{{content}}</p>
-    <button class="btn btn-danger" id="delete-btn" onclick="deleteBlogPost(${blogPost.id})">Delete</button>
+    <button class="btn btn-danger" id="delete-btn" onclick="deleteBlogPost('{{id}}')">Delete</button>
+ </div>
+    {{/each}}
   </div>
-{{/each}}
-</div>
 </div>
 
 <script src="/js/dashboard.js"></script>
