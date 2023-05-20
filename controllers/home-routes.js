@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // // Serialize data so the template can read it
+    // Serialize data so the template can read it
     const blogposts = blogPostData.map((blogpost) => blogpost.get({ plain: true }));
 
     // Pass serialized data and session flag into template
@@ -27,18 +27,6 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// router.get('/dashboard', withAuth, async (req, res) => {
-//   try {
-//     res.render('dashboard', {
-//       logged_in: req.session.logged_in,
-//       username: req.session.username
-//     });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).send('Server Error');
-//   }
-// });
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {

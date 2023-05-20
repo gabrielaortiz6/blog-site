@@ -37,6 +37,28 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const deleteBlogPost = async (blogPostId) => {
+  try {
+    const response = await fetch(`/api/blogposts/${blogPostId}`, {
+      method: 'DELETE',
+    });
+    
+    if (response.ok) {
+      // Delete was successful, perform any necessary UI updates or redirects
+      console.log('Blog post deleted successfully');
+      // For example, you can reload the page to reflect the updated list of blog posts
+      window.location.reload();
+    } else {
+      // Delete request failed
+      console.error('Failed to delete blog post');
+      // Handle the error or display an error message to the user
+    }
+  } catch (err) {
+    console.error(err);
+    // Handle any network or server errors
+  }
+};
+
 document
   .querySelector('.new-blogpost-form')
   .addEventListener('submit', newFormHandler);
