@@ -27,10 +27,10 @@
   <div class="col-md-6">
     <h3>Previous Posts:</h3>
   {{#each blogPosts}}
-  <div class="blog-post">
-    <h5>{{title}}</h5>
+  <div class="blog-post" id="blogPost-{{id}}">
+    <h5 class="title">{{title}}</h5>
     <p>Created by: {{user.username}}</p>
-    <p>{{content}}</p>
+    <p class="content"> {{content}}</p>
     <button class="btn btn-primary" id="edit-btn" onclick="editBlogPost('{{id}}')">Edit</button>
     <button class="btn btn-danger" id="delete-btn" onclick="deleteBlogPost('{{id}}')">Delete</button>
  </div>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { restart } = require('nodemon');
+const withAuth = require('../../utils/auth');
 const { BlogPost } = require('../../models');
 
 // Add a new POST route to handle form submissions
