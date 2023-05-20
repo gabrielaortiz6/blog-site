@@ -31,6 +31,7 @@
     <h5>{{title}}</h5>
     <p>Created by: {{user.username}}</p>
     <p>{{content}}</p>
+    <button class="btn btn-primary" id="edit-btn" onclick="editBlogPost('{{id}}')">Edit</button>
     <button class="btn btn-danger" id="delete-btn" onclick="deleteBlogPost('{{id}}')">Delete</button>
  </div>
     {{/each}}
